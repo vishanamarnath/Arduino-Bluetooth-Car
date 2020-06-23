@@ -1,0 +1,64 @@
+int bluetooth; 
+
+void setup()
+{
+  pinMode(4,OUTPUT);
+   pinMode(5,OUTPUT);
+   pinMode(6,OUTPUT);
+   pinMode(7,OUTPUT);
+  Serial.begin(9600);      //set baud rate 
+  
+  }
+
+  void loop()
+  {
+    if(Serial.available()>0)   //check is  the data  present or not 
+    {
+     bluetooth = Serial.read(); //reaing the data present in the serial available
+    }
+    if(bluetooth=='A')    //it checks the data recived from the bluetooth module is A
+    {
+    digitalWrite(4,LOW); //if the data is A the led should power on
+ 
+    digitalWrite(5,HIGH);  //if the data is A the led should power off
+
+    digitalWrite(6,LOW); //if the data is A the led should power on
+  
+    digitalWrite(7,HIGH);  //if the data is A the led should power off
+    }
+    else if(bluetooth=='B')    //it checks the data recived from the bluetooth module is A
+    {
+    digitalWrite(4,HIGH); //if the data is A the led should power on
+   digitalWrite(5,LOW);  //if the data is A the led should power off
+       digitalWrite(6,HIGH); //if the data is A the led should power on
+   digitalWrite(7,LOW);  //if the data is A the led should power off 
+    }
+    
+    else if(bluetooth=='C')    //it checks the data recived from the bluetooth module is A
+    {
+    digitalWrite(4,LOW); //if the data is A the led should power on
+  
+    digitalWrite(5,LOW);  //if the data is A the led should power off
+
+    digitalWrite(6,HIGH); //if the data is A the led should power on
+  
+    digitalWrite(7,LOW);  //if the data is A the led should power off
+    }
+    else if(bluetooth=='D')    //it checks the data recived from the bluetooth module is A
+    {
+    digitalWrite(4,HIGH); //if the data is A the led should power on
+   digitalWrite(5,LOW);  //if the data is A the led should power off
+       digitalWrite(6,LOW); //if the data is A the led should power on
+   digitalWrite(7,LOW);  //if the data is A the led should power off
+
+    }
+    else if(bluetooth=='S')    //it checks the data recived from the bluetooth module is A
+    {
+    digitalWrite(4,HIGH); //if the data is A the led should power on
+   digitalWrite(5,HIGH);  //if the data is A the led should power off
+       digitalWrite(6,LOW); //if the data is A the led should power on
+   digitalWrite(7,LOW);  //if the data is A the led should power off
+
+    }
+    }
+ 
